@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Para Ti, Mi Amor</title>
-  <meta name="description" content="Una flor, una cuenta regresiva y un mensaje de amor para cada dÃ­a.">
+  <meta name="description" content="Una flor, una cuenta regresiva y un mensaje de amor para cada día.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
@@ -153,11 +153,32 @@
       position: absolute;
       inset: 0;
       margin: auto;
-      width: 58px;
-      height: 58px;
+      width: 54px;
+      height: 54px;
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #ffe9a6, var(--center) 70%);
-      box-shadow: inset 0 -5px 10px rgba(173, 114, 10, 0.25), 0 4px 10px rgba(117, 71, 15, 0.25);
+      transform: translateY(2px);
+      background: radial-gradient(circle at 34% 30%, #fff1bf, #ffd166 60%, #f0b73d 100%);
+      box-shadow: inset 0 -6px 12px rgba(173, 114, 10, 0.28), 0 4px 10px rgba(117, 71, 15, 0.22);
+      border: 1px solid rgba(224, 161, 50, 0.65);
+    }
+
+    .center::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, rgba(173, 113, 23, 0.65) 1.2px, transparent 1.2px) 0 0 / 8px 8px;
+      opacity: 0.45;
+    }
+
+    .center::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.45);
+      pointer-events: none;
     }
 
     .stem {
@@ -294,7 +315,7 @@
   <main class="card">
     <header class="headline">
       <h1>Para Ti, Mi Amor</h1>
-      <p>Cada dÃ­a mÃ¡s cerca de abrazarte en Guayaquil.</p>
+      <p>Cada día más cerca de abrazarte en Guayaquil.</p>
     </header>
 
     <section class="flower-wrap" aria-hidden="true">
@@ -314,14 +335,14 @@
 
     <p class="count-title">Cuenta Regresiva al 20 de Marzo</p>
     <section class="countdown" aria-label="Cuenta regresiva">
-      <article class="box"><span class="num" id="days">0</span><span class="lab">DÃ­as</span></article>
+      <article class="box"><span class="num" id="days">0</span><span class="lab">Días</span></article>
       <article class="box"><span class="num" id="hours">0</span><span class="lab">Horas</span></article>
       <article class="box"><span class="num" id="minutes">0</span><span class="lab">Min</span></article>
       <article class="box"><span class="num" id="seconds">0</span><span class="lab">Seg</span></article>
     </section>
 
     <section class="love-box" aria-live="polite">
-      <p class="love-label">Mensaje del DÃ­a</p>
+      <p class="love-label">Mensaje del Día</p>
       <p id="daily-message"></p>
     </section>
 
@@ -330,43 +351,43 @@
 
   <script>
     const messages = [
-      "Dia 37: Hoy empieza la cuenta bonita, un dia menos para abrazarte en Guayaquil.",
-      "Dia 36: Te pienso y todo me sale mejor, porque tu amor me acompana.",
-      "Dia 35: Aunque haya distancia, contigo me siento en casa.",
-      "Dia 34: Cada mensaje tuyo me reinicia el corazon en modo felicidad.",
-      "Dia 33: Mi plan favorito sigue siendo el mismo: tu y yo.",
-      "Dia 32: Gracias por quererme tan bonito incluso desde lejos.",
-      "Dia 31: Hoy te extrano fuerte, pero tambien te amo mas fuerte.",
-      "Dia 30: Faltan 30 dias y ya siento tus manos en las mias.",
-      "Dia 29: Si sonries hoy, quiero creer que llegue hasta ti de alguna forma.",
-      "Dia 28: Tu eres esa persona que vuelve precioso cualquier dia normal.",
-      "Dia 27: Nos separan kilometros, pero nos une algo inmenso.",
-      "Dia 26: Todo vale la pena porque al final siempre estamos tu y yo.",
-      "Dia 25: Te debo un abrazo largo por cada noche de distancia.",
-      "Dia 24: Cada amanecer me recuerda que estoy mas cerca de verte.",
-      "Dia 23: Eres mi calma, mi alegria y mi lugar seguro.",
-      "Dia 22: El mundo puede correr rapido; yo solo quiero llegar a ti.",
-      "Dia 21: Me enamoras en todos tus detalles, incluso en silencio.",
-      "Dia 20: Faltan 20 dias para volver a respirar cerquita de ti.",
-      "Dia 19: Tu nombre en mi pantalla siempre mejora mi dia.",
-      "Dia 18: Lo nuestro no se cansa, no se enfria, no se rinde.",
-      "Dia 17: Hoy tambien te elijo, con ganas y con paciencia.",
-      "Dia 16: Pronto voy a cambiar 'te extrano' por 'te tengo aqui'.",
-      "Dia 15: Quince dias para el reencuentro mas esperado de mi vida.",
-      "Dia 14: Me gusta amarte asi: real, constante y sin pausa.",
-      "Dia 13: Cuando llegue, quiero perderme en tu abrazo primero.",
-      "Dia 12: Tu sonrisa es mi meta favorita de este mes.",
-      "Dia 11: Ya casi, amor. Cada segundo cuenta a nuestro favor.",
-      "Dia 10: Diez dias y te prometo besos de bienvenida infinitos.",
-      "Dia 9: Nada supera la ilusion de volver a mirarte de frente.",
-      "Dia 8: Ocho dias para volver a caminar juntos sin reloj.",
-      "Dia 7: Una semana. Te amo mas de lo que caben en palabras.",
-      "Dia 6: Seis dias para decirte al oido todo lo que te extrane.",
-      "Dia 5: Cinco dias para nuestro abrazo pendiente.",
-      "Dia 4: Cuatro dias y mi corazon ya esta haciendo maletas.",
-      "Dia 3: Tres dias. Ya casi puedo tocar esta felicidad.",
-      "Dia 2: Dos dias, amor. La distancia esta por rendirse.",
-      "Dia 1: Manana te veo. Hoy solo late una frase: por fin."
+      "Día 37: Hoy empieza la cuenta bonita, un día menos para abrazarte en Guayaquil.",
+      "Día 36: Te pienso y todo me sale mejor, porque tu amor me acompaña.",
+      "Día 35: Aunque haya distancia, contigo me siento en casa.",
+      "Día 34: Cada mensaje tuyo me reinicia el corazón en modo felicidad.",
+      "Día 33: Mi plan favorito sigue siendo el mismo: tú y yo.",
+      "Día 32: Gracias por quererme tan bonito incluso desde lejos.",
+      "Día 31: Hoy te extraño fuerte, pero también te amo más fuerte.",
+      "Día 30: Faltan 30 días y ya siento tus manos en las mías.",
+      "Día 29: Si sonríes hoy, quiero creer que llegué hasta ti de alguna forma.",
+      "Día 28: Tú eres esa persona que vuelve precioso cualquier día normal.",
+      "Día 27: Nos separan kilómetros, pero nos une algo inmenso.",
+      "Día 26: Todo vale la pena porque al final siempre estamos tú y yo.",
+      "Día 25: Te debo un abrazo largo por cada noche de distancia.",
+      "Día 24: Cada amanecer me recuerda que estoy más cerca de verte.",
+      "Día 23: Eres mi calma, mi alegría y mi lugar seguro.",
+      "Día 22: El mundo puede correr rápido; yo solo quiero llegar a ti.",
+      "Día 21: Me enamoras en todos tus detalles, incluso en silencio.",
+      "Día 20: Faltan 20 días para volver a respirar cerquita de ti.",
+      "Día 19: Tu nombre en mi pantalla siempre mejora mi día.",
+      "Día 18: Lo nuestro no se cansa, no se enfría, no se rinde.",
+      "Día 17: Hoy también te elijo, con ganas y con paciencia.",
+      "Día 16: Pronto voy a cambiar 'te extraño' por 'te tengo aquí'.",
+      "Día 15: Quince días para el reencuentro más esperado de mi vida.",
+      "Día 14: Me gusta amarte así: real, constante y sin pausa.",
+      "Día 13: Cuando llegue, quiero perderme en tu abrazo primero.",
+      "Día 12: Tu sonrisa es mi meta favorita de este mes.",
+      "Día 11: Ya casi, amor. Cada segundo cuenta a nuestro favor.",
+      "Día 10: Diez días y te prometo besos de bienvenida infinitos.",
+      "Día 9: Nada supera la ilusión de volver a mirarte de frente.",
+      "Día 8: Ocho días para volver a caminar juntos sin reloj.",
+      "Día 7: Una semana. Te amo más de lo que caben en palabras.",
+      "Día 6: Seis días para decirte al oído todo lo que te extrañé.",
+      "Día 5: Cinco días para nuestro abrazo pendiente.",
+      "Día 4: Cuatro días y mi corazón ya está haciendo maletas.",
+      "Día 3: Tres días. Ya casi puedo tocar esta felicidad.",
+      "Día 2: Dos días, amor. La distancia está por rendirse.",
+      "Día 1: Mañana te veo. Hoy solo late una frase: por fin."
     ];
     const tripMonth = 3;  // marzo
     const tripDay = 20;
@@ -429,7 +450,7 @@
         minEl.textContent = "00";
         secEl.textContent = "00";
         messageEl.textContent = "Hoy te abrazo por fin. Ya no hay distancia, solo nosotros.";
-        footerEl.innerHTML = "<span class='done'>LlegÃ³ el dÃ­a de verte, mi amor.</span>";
+        footerEl.innerHTML = "<span class='done'>Llegó el día de verte, mi amor.</span>";
         return;
       }
 
