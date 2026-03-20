@@ -559,6 +559,13 @@
       place-items: center;
     }
 
+    .message-signoff {
+      margin-top: 10px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #7c2530;
+    }
+
     .footer {
       margin-top: 12px;
       text-align: center;
@@ -706,6 +713,7 @@
     <section class="love-box" aria-live="polite">
       <p class="love-label">Mensaje para el viaje</p>
       <p id="daily-message"></p>
+      <p class="message-signoff">Te quiero Amor</p>
     </section>
 
     <p class="footer" id="footer-note">Nos vemos en Guayaquil, mi vida.</p>
@@ -774,7 +782,7 @@
 
     function describeJourney(now) {
       if (now < flights[0].start) {
-        return "Falta muy poquito para que despegues desde Madrid.";
+        return "Falta poco apra que mi vuelo despegue desde Madrid.";
       }
       if (now < flights[0].end) {
         return "Ahora mismo vas cruzando el Atl\u00e1ntico rumbo a Bogot\u00e1.";
