@@ -329,6 +329,206 @@
       letter-spacing: 0.8px;
     }
 
+    .arrival-note {
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.45;
+      font-weight: 700;
+      color: #7c2530;
+      margin: 2px 10px 16px;
+    }
+
+    .tracker {
+      border: 1px solid rgba(178, 58, 72, 0.18);
+      border-radius: 18px;
+      background: rgba(255, 250, 246, 0.8);
+      padding: 14px 12px;
+      margin-bottom: 14px;
+    }
+
+    .tracker-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .tracker-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--accent);
+    }
+
+    .tracker-chip {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #8d5a4d;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(167, 94, 73, 0.22);
+      white-space: nowrap;
+    }
+
+    .route {
+      display: grid;
+      grid-template-columns: auto 1fr auto 1fr auto;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #724235;
+    }
+
+    .route-stop {
+      text-align: center;
+    }
+
+    .route-line {
+      position: relative;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(178, 58, 72, 0.13);
+      overflow: hidden;
+    }
+
+    .route-line::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: var(--segment-progress, 0%);
+      background: linear-gradient(90deg, #f78da7, #b23a48);
+      border-radius: inherit;
+      transition: width 0.6s ease;
+    }
+
+    .progress-wrap {
+      margin-bottom: 12px;
+    }
+
+    .progress-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.76rem;
+      color: #8d5a4d;
+      margin-bottom: 6px;
+    }
+
+    .progress-bar {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(178, 58, 72, 0.12);
+      overflow: hidden;
+    }
+
+    .progress-bar span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #f78da7, #b23a48);
+      transition: width 0.6s ease;
+    }
+
+    .flight-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .flight-card {
+      border: 1px solid rgba(167, 94, 73, 0.2);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.72);
+      padding: 12px 11px;
+    }
+
+    .flight-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 7px;
+    }
+
+    .flight-code {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #6b2f1f;
+    }
+
+    .flight-route {
+      font-size: 0.8rem;
+      color: #8d5a4d;
+    }
+
+    .flight-status {
+      font-size: 0.73rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: rgba(178, 58, 72, 0.1);
+      color: #8b3040;
+    }
+
+    .flight-status.live {
+      background: rgba(42, 157, 143, 0.16);
+      color: #1d796f;
+    }
+
+    .flight-status.done {
+      background: rgba(74, 124, 89, 0.16);
+      color: #2d6f41;
+    }
+
+    .flight-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 0.79rem;
+      color: #724235;
+      margin-bottom: 8px;
+    }
+
+    .flight-progress {
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(178, 58, 72, 0.12);
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .flight-progress span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #ffd166, #f78da7 58%, #b23a48);
+      transition: width 0.6s ease;
+    }
+
+    .flight-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .flight-links a {
+      text-decoration: none;
+      font-size: 0.77rem;
+      font-weight: 700;
+      color: #7c2530;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(178, 58, 72, 0.2);
+      background: rgba(255, 255, 255, 0.82);
+    }
+
     .love-box {
       border: 1px solid rgba(166, 87, 76, 0.34);
       background: rgba(255, 248, 243, 0.78);
@@ -383,6 +583,25 @@
         font-size: 0.66rem;
       }
     }
+
+    @media (max-width: 420px) {
+      .tracker-head,
+      .flight-top,
+      .flight-meta {
+        display: block;
+      }
+
+      .tracker-chip,
+      .flight-status {
+        display: inline-block;
+        margin-top: 6px;
+      }
+
+      .flight-meta span + span {
+        display: block;
+        margin-top: 4px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -413,7 +632,7 @@
       <span class="stem"></span>
     </section>
 
-    <p class="count-title">Cuenta Regresiva al 20 de Marzo</p>
+    <p class="count-title">Cuenta atr&aacute;s hasta tu llegada a Guayaquil</p>
     <section class="countdown" aria-label="Cuenta regresiva">
       <article class="box"><span class="num" id="days">0</span><span class="lab">D&iacute;as</span></article>
       <article class="box"><span class="num" id="hours">0</span><span class="lab">Horas</span></article>
@@ -421,8 +640,71 @@
       <article class="box"><span class="num" id="seconds">0</span><span class="lab">Seg</span></article>
     </section>
 
+    <p class="arrival-note">Amor, solo quedan horas para tenerte entre mis brazos</p>
+
+    <section class="tracker" aria-label="Seguimiento estimado del viaje">
+      <div class="tracker-head">
+        <p class="tracker-title">Tu viaje de hoy</p>
+        <p class="tracker-chip" id="journey-status">Calculando progreso...</p>
+      </div>
+
+      <div class="route" aria-hidden="true">
+        <span class="route-stop">Madrid</span>
+        <span class="route-line" id="route-mad-bog"></span>
+        <span class="route-stop">Bogot&aacute;</span>
+        <span class="route-line" id="route-bog-gye"></span>
+        <span class="route-stop">Guayaquil</span>
+      </div>
+
+      <div class="progress-wrap" aria-label="Progreso total del viaje">
+        <div class="progress-labels">
+          <span>Salida 16:30 MAD</span>
+          <span>Llegada 23:35 GYE</span>
+        </div>
+        <div class="progress-bar"><span id="journey-progress"></span></div>
+      </div>
+
+      <div class="flight-list">
+        <article class="flight-card">
+          <div class="flight-top">
+            <div>
+              <p class="flight-code">AV11</p>
+              <p class="flight-route">Madrid -> Bogot&aacute;</p>
+            </div>
+            <p class="flight-status" id="status-av11">Pendiente</p>
+          </div>
+          <div class="flight-meta">
+            <span id="time-av11">16:30 MAD -> 20:50 BOG</span>
+            <span id="detail-av11">Primer tramo del viaje</span>
+          </div>
+          <div class="flight-progress"><span id="progress-av11"></span></div>
+          <div class="flight-links">
+            <a href="https://www.flightradar24.com/data/flights/av11" target="_blank" rel="noopener noreferrer">Seguimiento real</a>
+          </div>
+        </article>
+
+        <article class="flight-card">
+          <div class="flight-top">
+            <div>
+              <p class="flight-code">AV8391</p>
+              <p class="flight-route">Bogot&aacute; -> Guayaquil</p>
+            </div>
+            <p class="flight-status" id="status-av8391">Pendiente</p>
+          </div>
+          <div class="flight-meta">
+            <span id="time-av8391">21:25 BOG -> 23:35 GYE</span>
+            <span id="detail-av8391">Segundo tramo del viaje</span>
+          </div>
+          <div class="flight-progress"><span id="progress-av8391"></span></div>
+          <div class="flight-links">
+            <a href="https://www.flightradar24.com/data/flights/av8391" target="_blank" rel="noopener noreferrer">Seguimiento real</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="love-box" aria-live="polite">
-      <p class="love-label">Mensaje del D&iacute;a</p>
+      <p class="love-label">Mensaje para el viaje</p>
       <p id="daily-message"></p>
     </section>
 
@@ -430,96 +712,135 @@
   </main>
 
   <script>
-    const messages = [
-      "D\u00eda 37: Hoy empieza la cuenta bonita, un d\u00eda menos para abrazarte en Guayaquil.",
-      "D\u00eda 36: Te pienso y todo me sale mejor, porque tu amor me acompa\u00f1a.",
-      "D\u00eda 35: Aunque haya distancia, contigo me siento en casa.",
-      "D\u00eda 34: Cada mensaje tuyo me reinicia el coraz\u00f3n en modo felicidad.",
-      "D\u00eda 33: Mi plan favorito sigue siendo el mismo: t\u00fa y yo.",
-      "D\u00eda 32: Gracias por quererme tan bonito incluso desde lejos.",
-      "D\u00eda 31: Hoy te extra\u00f1o fuerte, pero tambi\u00e9n te amo m\u00e1s fuerte.",
-      "D\u00eda 30: Faltan 30 d\u00edas y ya siento tus manos en las m\u00edas.",
-      "D\u00eda 29: Si sonr\u00edes hoy, quiero creer que llegu\u00e9 hasta ti de alguna forma.",
-      "D\u00eda 28: T\u00fa eres esa persona que vuelve precioso cualquier d\u00eda normal.",
-      "D\u00eda 27: Nos separan kil\u00f3metros, pero nos une algo inmenso.",
-      "D\u00eda 26: Todo vale la pena porque al final siempre estamos t\u00fa y yo.",
-      "D\u00eda 25: Te debo un abrazo largo por cada noche de distancia.",
-      "D\u00eda 24: Cada amanecer me recuerda que estoy m\u00e1s cerca de verte.",
-      "D\u00eda 23: Eres mi calma, mi alegr\u00eda y mi lugar seguro.",
-      "D\u00eda 22: El mundo puede correr r\u00e1pido; yo solo quiero llegar a ti.",
-      "D\u00eda 21: Me enamoras en todos tus detalles, incluso en silencio.",
-      "D\u00eda 20: Faltan 20 d\u00edas para volver a respirar cerquita de ti.",
-      "D\u00eda 19: Tu nombre en mi pantalla siempre mejora mi d\u00eda.",
-      "D\u00eda 18: Lo nuestro no se cansa, no se enfr\u00eda, no se rinde.",
-      "D\u00eda 17: Hoy tambi\u00e9n te elijo, con ganas y con paciencia.",
-      "D\u00eda 16: Pronto voy a cambiar 'te extra\u00f1o' por 'te tengo aqu\u00ed'.",
-      "D\u00eda 15: Quince d\u00edas para el reencuentro m\u00e1s esperado de mi vida.",
-      "D\u00eda 14: Me gusta amarte as\u00ed: real, constante y sin pausa.",
-      "D\u00eda 13: Cuando llegue, quiero perderme en tu abrazo primero.",
-      "D\u00eda 12: Tu sonrisa es mi meta favorita de este mes.",
-      "D\u00eda 11: Ya casi, amor. Cada segundo cuenta a nuestro favor.",
-      "D\u00eda 10: Diez d\u00edas y te prometo besos de bienvenida infinitos.",
-      "D\u00eda 9: Nada supera la ilusi\u00f3n de volver a mirarte de frente.",
-      "D\u00eda 8: Ocho d\u00edas para volver a caminar juntos sin reloj.",
-      "D\u00eda 7: Una semana. Te amo m\u00e1s de lo que caben en palabras.",
-      "D\u00eda 6: Seis d\u00edas para decirte al o\u00eddo todo lo que te extra\u00f1\u00e9.",
-      "D\u00eda 5: Cinco d\u00edas para nuestro abrazo pendiente.",
-      "D\u00eda 4: Cuatro d\u00edas y mi coraz\u00f3n ya est\u00e1 haciendo maletas.",
-      "D\u00eda 3: Tres d\u00edas. Ya casi puedo tocar esta felicidad.",
-      "D\u00eda 2: Dos d\u00edas, amor. La distancia est\u00e1 por rendirse.",
-      "D\u00eda 1: Ma\u00f1ana te veo. Hoy solo late una frase: por fin."
-    ];
-    const tripMonth = 3;  // marzo
-    const tripDay = 20;
-    const tripHourInGuayaquil = 0;
-    const tripMinuteInGuayaquil = 0;
-
     const dayEl = document.getElementById("days");
     const hourEl = document.getElementById("hours");
     const minEl = document.getElementById("minutes");
     const secEl = document.getElementById("seconds");
     const messageEl = document.getElementById("daily-message");
     const footerEl = document.getElementById("footer-note");
+    const journeyStatusEl = document.getElementById("journey-status");
+    const journeyProgressEl = document.getElementById("journey-progress");
+    const routeMadBogEl = document.getElementById("route-mad-bog");
+    const routeBogGyeEl = document.getElementById("route-bog-gye");
 
-    function getGuayaquilYear() {
-      return Number(new Intl.DateTimeFormat("en-US", { timeZone: "America/Guayaquil", year: "numeric" }).format(new Date()));
-    }
-
-    function getTripTimestamp() {
-      const year = getGuayaquilYear();
-      let target = Date.UTC(year, tripMonth - 1, tripDay, tripHourInGuayaquil + 5, tripMinuteInGuayaquil, 0);
-      if (Date.now() > target) {
-        target = Date.UTC(year + 1, tripMonth - 1, tripDay, tripHourInGuayaquil + 5, tripMinuteInGuayaquil, 0);
+    const flightEls = {
+      AV11: {
+        status: document.getElementById("status-av11"),
+        detail: document.getElementById("detail-av11"),
+        progress: document.getElementById("progress-av11")
+      },
+      AV8391: {
+        status: document.getElementById("status-av8391"),
+        detail: document.getElementById("detail-av8391"),
+        progress: document.getElementById("progress-av8391")
       }
-      return target;
-    }
+    };
 
-    function setDailyMessage() {
-      const diff = targetTs - Date.now();
-      if (diff <= 0) {
-        return;
+    const journeyStartTs = Date.UTC(2026, 2, 20, 15, 30, 0);
+    const targetTs = Date.UTC(2026, 2, 21, 4, 35, 0);
+
+    const flights = [
+      {
+        code: "AV11",
+        from: "Madrid",
+        to: "Bogot\u00e1",
+        start: Date.UTC(2026, 2, 20, 15, 30, 0),
+        end: Date.UTC(2026, 2, 21, 1, 50, 0),
+        pendingText: "Todo listo para despegar desde Madrid.",
+        liveText: "Volando rumbo a Bogot\u00e1.",
+        doneText: "Aterrizaste en Bogot\u00e1. Primera parte completada."
+      },
+      {
+        code: "AV8391",
+        from: "Bogot\u00e1",
+        to: "Guayaquil",
+        start: Date.UTC(2026, 2, 21, 2, 25, 0),
+        end: Date.UTC(2026, 2, 21, 4, 35, 0),
+        pendingText: "Esperando en Bogot\u00e1 para el tramo final.",
+        liveText: "Ya vas camino a Guayaquil.",
+        doneText: "Aterrizaste en Guayaquil. Por fin juntitos."
       }
-      const daysLeft = Math.ceil(diff / 86400000);
-      const index = Math.max(0, Math.min(messages.length - 1, messages.length - daysLeft));
-      messageEl.style.opacity = "0";
-      window.setTimeout(() => {
-        messageEl.textContent = messages[index];
-        messageEl.style.opacity = "1";
-      }, 180);
-    }
+    ];
+
+    let currentJourneyMessage = "";
+
     function pad(value) {
       return String(value).padStart(2, "0");
     }
 
-    const targetTs = getTripTimestamp();
-    const dateLabel = new Date(targetTs).toLocaleDateString("es-EC", {
-      timeZone: "America/Guayaquil",
-      weekday: "long",
-      day: "numeric",
-      month: "long",
-      year: "numeric"
-    });
-    footerEl.textContent = "Fecha de viaje: " + dateLabel + " (Guayaquil)";
+    function clamp(value, min, max) {
+      return Math.max(min, Math.min(max, value));
+    }
+
+    function describeJourney(now) {
+      if (now < flights[0].start) {
+        return "Falta muy poquito para que despegues desde Madrid.";
+      }
+      if (now < flights[0].end) {
+        return "Ahora mismo vas cruzando el Atl\u00e1ntico rumbo a Bogot\u00e1.";
+      }
+      if (now < flights[1].start) {
+        return "Ya est\u00e1s en Bogot\u00e1. Solo queda el \u00faltimo salto hacia m\u00ed.";
+      }
+      if (now < flights[1].end) {
+        return "Ya vienes volando hacia Guayaquil. Mi abrazo te est\u00e1 esperando.";
+      }
+      return "Ya llegaste a Guayaquil. Ahora solo faltamos t\u00fa y yo.";
+    }
+
+    function setJourneyState() {
+      const now = Date.now();
+      const totalProgress = clamp((now - journeyStartTs) / (targetTs - journeyStartTs), 0, 1);
+
+      journeyProgressEl.style.width = (totalProgress * 100).toFixed(1) + "%";
+      routeMadBogEl.style.setProperty("--segment-progress", (clamp((now - flights[0].start) / (flights[0].end - flights[0].start), 0, 1) * 100).toFixed(1) + "%");
+      routeBogGyeEl.style.setProperty("--segment-progress", (clamp((now - flights[1].start) / (flights[1].end - flights[1].start), 0, 1) * 100).toFixed(1) + "%");
+
+      if (now < flights[0].start) {
+        journeyStatusEl.textContent = "Salida inminente";
+      } else if (now < flights[0].end) {
+        journeyStatusEl.textContent = "AV11 en vuelo";
+      } else if (now < flights[1].start) {
+        journeyStatusEl.textContent = "Escala en Bogot\u00e1";
+      } else if (now < flights[1].end) {
+        journeyStatusEl.textContent = "AV8391 en vuelo";
+      } else {
+        journeyStatusEl.textContent = "Ya est\u00e1s en Guayaquil";
+      }
+
+      flights.forEach((flight) => {
+        const progress = clamp((now - flight.start) / (flight.end - flight.start), 0, 1);
+        const ui = flightEls[flight.code];
+        ui.progress.style.width = (progress * 100).toFixed(1) + "%";
+
+        if (now < flight.start) {
+          ui.status.textContent = "Pendiente";
+          ui.status.className = "flight-status";
+          ui.detail.textContent = flight.pendingText;
+        } else if (now < flight.end) {
+          ui.status.textContent = "En vuelo";
+          ui.status.className = "flight-status live";
+          ui.detail.textContent = flight.liveText;
+        } else {
+          ui.status.textContent = "Completado";
+          ui.status.className = "flight-status done";
+          ui.detail.textContent = flight.doneText;
+        }
+      });
+
+      const nextMessage = describeJourney(now);
+      if (nextMessage !== currentJourneyMessage) {
+        currentJourneyMessage = nextMessage;
+        messageEl.style.opacity = "0";
+        window.setTimeout(() => {
+          messageEl.textContent = nextMessage;
+          messageEl.style.opacity = "1";
+        }, 180);
+      }
+    }
+
+    footerEl.textContent =
+      "Itinerario de hoy: sales el 20 de marzo de 2026 a las 16:30 desde Madrid y llegas a Guayaquil a las 23:35.";
 
     function tick() {
       const diff = targetTs - Date.now();
@@ -529,8 +850,10 @@
         hourEl.textContent = "00";
         minEl.textContent = "00";
         secEl.textContent = "00";
+        currentJourneyMessage = "Hoy te abrazo por fin. Ya no hay distancia, solo nosotros.";
         messageEl.textContent = "Hoy te abrazo por fin. Ya no hay distancia, solo nosotros.";
-        footerEl.innerHTML = "<span class='done'>Lleg&oacute; el d&iacute;a de verte, mi amor.</span>";
+        footerEl.innerHTML = "<span class='done'>Ya llegaste a Guayaquil, mi amor. Ahora s&iacute;: por fin.</span>";
+        setJourneyState();
         return;
       }
 
@@ -543,6 +866,7 @@
       hourEl.textContent = pad(hours);
       minEl.textContent = pad(minutes);
       secEl.textContent = pad(seconds);
+      setJourneyState();
     }
 
     function createFallingPetals() {
@@ -566,13 +890,9 @@
     }
 
     createFallingPetals();
-    setDailyMessage();
     tick();
 
     setInterval(tick, 1000);
-    setInterval(setDailyMessage, 60000);
   </script>
 </body>
 </html>
-
-
